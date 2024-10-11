@@ -1,0 +1,16 @@
+{
+  "name": "guestbook",
+  "version": "1.0.0",
+  "description": "A simple guest book website",
+  "main": "server.js",
+  "scripts": {
+    "run": "node server.js"
+  },
+  "author": "Isaac Evans",
+  "license": "Unlicense",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "sqlite3": "^5.1.7"
+  }
+}
