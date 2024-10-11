@@ -1,0 +1,40 @@
+h1,h2 {
+    font-family: 'Bungee', sans-serif;
+    font-weight: 400;
+    font-size: normal;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: darkgray;
+}
+#guestBookEntries {
+    border-color: black;
+    border-width: 2px;
+    border-style: dashed;
+    max-height: 300px; /* Set the maximum height */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    padding: 10px 10px;
+    margin: 20px;
+    background-color: lightgrey;
+}
+input[type=text], select {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+textarea {
+    width: 80%;
+    height: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
