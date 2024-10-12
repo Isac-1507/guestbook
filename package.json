@@ -7,7 +7,7 @@
     "run": "node server.js"
   },
   "author": "Isaac Evans",
-  "license": "Unlicense",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.3",
     "express": "^4.21.1",
