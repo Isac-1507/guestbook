@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guest Book</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="stylesheet.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700,1,900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -21,16 +20,17 @@
     <h1><u>Guest Book</u></h1>
     <div class="container">
       <div id="guestBookEntries"></div>
-      <form id="guestBookForm">
-        <label for="name">Name:</label><br />
-        <input type="text" id="name" name="name" autocomplete="off"/><br />
-        <label for="message">Message:</label><br />
-        <textarea id="message" name="message"></textarea><br /><br />
-        <input type="submit" value="Submit" class="submit" autocomplete="off"/>
-        <br />
-        <br />
-        <div id="status"></div>
-      </form>
+      <div class="idk">
+        <form id="guestBookForm">
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" name="name" /><br />
+          <label for="message">Message:</label><br />
+          <textarea id="message" name="message"></textarea><br />
+          <input type="submit" value="Submit" class="submit" />
+          <div id="status"></div>
+        </form>
+        <button id="pullButton">Pull</button> <!-- Button placed outside the form -->
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
