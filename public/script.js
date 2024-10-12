@@ -1,3 +1,4 @@
+const delay = ms => new Promise(res => setTimeout(res, ms));
 document
   .getElementById("guestBookForm")
   .addEventListener("submit", function (e) {
@@ -5,6 +6,8 @@ document
 
     const name = document.getElementById("name").value;
     const message = document.getElementById("message").value;
+    const status = document.getElementById("status");
+
 
     fetch("/submit", {
       method: "POST",
@@ -14,10 +17,12 @@ document
       body: JSON.stringify({ name, message }),
     })
       .then((response) => response.json())
-      .then((data) => {
+      .then(async (data) => {
         if (data.success) {
-          alert("Thank you for your message!");
+          status.innerHTML += "Thank you for submitting your message!";
           loadEntries();
+          await delay(3000);
+          status.innerHTML = "";
         } else {
           alert("There was an error submitting your message.");
         }
@@ -27,16 +32,18 @@ document
       });
   });
 
-  function loadEntries() {
-    fetch('/entries').then(response => response.json()).then(entries => {
-        const entriesContainer = document.getElementById('guestBookEntries')
-        entriesContainer.innerHTML = '';
-        entries.forEach(entry => {
-            const entryElement = document.createElement('div');
-            entryElement.innerHTML = `<strong>${entry.name}</strong><p>${entry.message}</p>`;
-            entriesContainer.appendChild(entryElement);
-        })
-    })
-  }
+function loadEntries() {
+  fetch("/entries")
+    .then((response) => response.json())
+    .then((entries) => {
+      const entriesContainer = document.getElementById("guestBookEntries");
+      entriesContainer.innerHTML = "";
+      entries.forEach((entry) => {
+        const entryElement = document.createElement("div");
+        entryElement.innerHTML = `<strong>${entry.name}</strong><p>${entry.message}</p><hr>`;
+        entriesContainer.appendChild(entryElement);
+      });
+    });
+}
 
-  document.addEventListener('DOMContentLoaded', loadEntries);
+document.addEventListener("DOMContentLoaded", loadEntries);
