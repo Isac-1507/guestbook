@@ -1,31 +1,12 @@
-FROM node:latest
+FROM node:alpine
 
 WORKDIR /app
 
-
-
-COPY package.json .
-
-
-
-COPY package-lock.json .
-
-
-
-RUN npm ci
-
-
+COPY package.json package-lock.json ./
+RUN npm ci && npm cache clean --force
 
 COPY server.js .
-
-
-
 COPY public ./public
-
-
-
 COPY database.js .
 
-
-
-CMD ["server.js"]
+CMD ["node", "server.js"]
